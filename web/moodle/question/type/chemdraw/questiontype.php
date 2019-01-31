@@ -13,7 +13,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/questionlib.php');
 require_once($CFG->dirroot . '/question/engine/lib.php');
-require_once($CFG->dirroot . '/question/type/shortanswer/question.php');
+require_once($CFG->dirroot . '/question/type/chemdraw/question.php');
 
 
 /**
@@ -59,39 +59,29 @@ class qtype_chemdraw extends question_type {
      * 
      * @param object $question The question to be saved.
      */
-    public function save_question_options($question){
+    public function save_question_options($question) {
 
         global $DB;
+        $result = new stdClass();
 
-        //TODO: Check if another questiontypebase is needed!!!
-        $answer = $question->answer;
-        $feedback = $question->feedback;
-        $feedbackformat = 1.0;
+        // Perform sanity checks on fractional grades.
+        $maxfraction = -1;
+        foreach ($question->answer as $key => $answerdata) {
+            if ($question->fraction[$key] > $maxfraction) {
+                $maxfraction = $question->fraction[$key];
+            }
+        }
 
-        // Transform answer string in answers array
-        $question->answer = array();
-        $question->answer[0] = $answer;
-        
-        // Set the fraction to 1 as we only provide one answer
-        $question->fraction = array();
-        $question->fraction[0] = 1.0;
-
-        // Set the feedback format to 1
-        $question->feedbackformat = array();
-        $question->feedbackformat[0] = $feedbackformat;
-
-        // Transform feedback into array with one element
-        $question->feedback = array();
-        $question->feedback[0] = $feedback;
-
-        var_dump($question);
+        if ($maxfraction != 1) {
+            $result->error = get_string('fractionsnomax', 'question', $maxfraction * 100);
+            return $result;
+        }
 
         parent::save_question_options($question);
 
         $this->save_question_answers($question);
+
         $this->save_hints($question);
-
-
     }
 
     /**

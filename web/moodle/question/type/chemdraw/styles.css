@@ -1,0 +1,65 @@
+.que.chemdraw .qtype_chemdraw_editor_section {
+  height: 300px;
+  width: 90%; }
+
+.que.chemdraw .qtype_chemdraw_jsme_container, .que.chemdraw .qtype_chemdraw_jsme_container > div:first-child {
+  height: auto;
+  width: 100%; }
+
+.que.chemdraw .qtype_chemdraw_editor_section {
+  position: relative; }
+
+.qtype_chemdraw_editor_container {
+  width: 100%; }
+
+.qtype_chemdraw_import_row {
+  margin-top: 10px;
+  display: flex;
+  width: 100%; }
+
+.qtype_chemdraw_import_label {
+  margin: 0;
+  width: 20%; }
+
+.qtype_chemdraw_import {
+  width: 100%; }
+
+.qtype_chemdraw_file_picker {
+  width: 80%;
+  padding: 0;
+  margin: 0; }
+
+.qtype_chemdraw_dropzone {
+  position: relative;
+  background-color: #ddd;
+  color: #777;
+  width: 100%;
+  height: 200px;
+  border: 6px dashed #777; }
+
+.qtype_chemdraw_dropzone_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold; }
+
+.on_drag_over {
+  background-color: #83ffb8;
+  color: #007633;
+  border: 6px dashed #007633; }
+
+.on_error {
+  background-color: #faa;
+  color: #b00;
+  border: 6px dashed #b00; }
+
+.on_success {
+  background-color: #aaf;
+  color: #00b;
+  border: 6px dashed #00b; }
+
+.qtype_chemdraw_mol_import {
+  width: 80%;
+  height: 50px; }

@@ -1,0 +1,18 @@
+.que.chemdraw {
+
+    .qtype_chemdraw {
+
+        &_jsme_container {
+
+            @extend %editor;
+
+            
+
+            & > div:first-child {
+                @extend %editor;
+            }
+
+        }
+
+    }
+}

@@ -1,0 +1,61 @@
+.qtype_chemdraw {
+
+    &_dropzone {
+
+        position: relative;
+
+        background-color: $color-grey;
+
+        color: $color-grey-dark;
+
+        width: 100%;
+        height: 200px;
+
+        border: 6px dashed $color-grey-dark;
+
+
+    }
+
+    &_dropzone_text {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        font-size: 20px;
+        font-weight: bold;
+        
+    }
+}
+
+.on_drag_over {
+
+    background-color: $color-secondary;
+
+    color: $color-primary;
+
+    border: 6px dashed $color-primary;
+
+}
+
+.on_error {
+
+    background-color: $color-red;
+
+    color: $color-red-dark;
+
+    border: 6px dashed $color-red-dark;
+
+}
+
+.on_success {
+
+    background-color: $color-blue;
+
+    color: $color-blue-dark;
+
+    border: 6px dashed $color-blue-dark;
+
+}

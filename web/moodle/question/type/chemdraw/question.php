@@ -22,7 +22,7 @@ require_once($CFG->dirroot . '/question/type/questionbase.php');
 class qtype_chemdraw_question extends question_graded_by_strategy implements question_response_answer_comparer {
 
     /** @var array of question answers */
-    public $answer = array();
+    public $answers = array();
 
     /**
      * Constructor
@@ -31,6 +31,7 @@ class qtype_chemdraw_question extends question_graded_by_strategy implements que
      */
     public function __construct() {
         parent::__construct(new question_first_matching_answer_grading_strategy($this));
+
     }
 
     /**
@@ -117,19 +118,23 @@ class qtype_chemdraw_question extends question_graded_by_strategy implements que
     }
 
     /**
-     * Compares the response with the correct answer to the question
+     * Compares the response with the correct answers to the question
      * 
      * @param array Response to the answer
      * @param question_answer Correct answer to the question
      */
-    public function compare_response_with_answer(array $response, question_answer $answer){
+    public function compare_response_with_answer(array $response, question_answer $answers){
+
         if (!array_key_exists('answer', $response) || is_null($response['answer'])) {
             return false;
         }
 
-        //TODO
-        return true;
-    }
+        if(strcmp($response['answer'], $answers->answer) == 0){
+            return true;
+        }
+
+        return false;
+    } 
 
 
 

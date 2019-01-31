@@ -1,0 +1,16 @@
+%custom-border {
+
+    box-sizing: border-box;
+    border: 2px solid $color-primary;
+
+}
+
+%editor-container {
+    height: $editor-height;
+    width: $editor-width;
+}
+
+%editor {
+    height: auto;
+    width: 100%;
+}

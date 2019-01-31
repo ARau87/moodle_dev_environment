@@ -16,13 +16,14 @@ $string['pluginnamesummary'] = 'Allows the creation of questions that include dr
 
 // Edit Form strings
 $string['chemstructure'] = 'Chemical structure.';
+$string['inchianswer_label'] = 'Inchi Representation';
+$string['answerno'] = 'Smiles: {$a}';
 
 //TODO: Add strings:
 
 $string['addmoreanswerblanks'] = 'Blanks for {no} More Answers';
-$string['answer'] = 'Answer: {$a}';
+$string['answer'] = 'Smiles Representation: {$a}';
 $string['answermustbegiven'] = 'You must enter an answer if there is a grade or feedback.';
-$string['answerno'] = 'Answer {$a}';
 $string['caseno'] = 'No, case is unimportant';
 $string['casesensitive'] = 'Case sensitivity';
 $string['caseyes'] = 'Yes, case must match';

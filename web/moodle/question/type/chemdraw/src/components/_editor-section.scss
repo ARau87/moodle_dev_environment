@@ -1,0 +1,15 @@
+.que.chemdraw {
+
+    .qtype_chemdraw {
+
+        &_editor_section {
+
+            @extend %editor-container;
+
+            position: relative;
+
+        }
+
+    }
+
+}
